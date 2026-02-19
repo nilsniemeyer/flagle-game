@@ -32,6 +32,8 @@ const banner = document.getElementById("banner");
 const countdownArea = document.getElementById("countdown-area");
 const countdownEl = document.getElementById("countdown");
 const paletteSwatch = document.getElementById("palette-swatches");
+const hardModeCb = document.getElementById("hard-mode-cb");
+const app = document.getElementById("app");
 
 /* ── Helpers ───────────────────────────────────────────────────────────────── */
 
@@ -353,6 +355,20 @@ guessBtn.addEventListener("click", async () => {
 
   guessBtn.disabled = false;
 });
+
+/* ── Hard mode toggle ──────────────────────────────────────────────────────── */
+
+function applyHardMode(on) {
+  app.classList.toggle("hide-thumbs", on);
+  hardModeCb.checked = on;
+  localStorage.setItem("flagle-hard-mode", on ? "1" : "0");
+}
+
+hardModeCb.addEventListener("change", () => {
+  applyHardMode(hardModeCb.checked);
+});
+
+applyHardMode(localStorage.getItem("flagle-hard-mode") === "1");
 
 /* ── Palette footer ────────────────────────────────────────────────────────── */
 

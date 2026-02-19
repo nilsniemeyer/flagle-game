@@ -37,6 +37,38 @@ header h1 {
   color: #f9fafb;
 }
 
+/* ── Hard-mode toggle ──────────────────────────────────────────────────────── */
+
+#hard-mode-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  user-select: none;
+}
+
+#hard-mode-toggle input {
+  accent-color: #6366f1;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+#hard-mode-toggle:hover { color: #e5e7eb; }
+
+/* When active: hide all flag thumbnails */
+#app.hide-thumbs .guess-thumb img,
+#app.hide-thumbs .dropdown-item img { display: none; }
+
+#app.hide-thumbs .guess-row {
+  grid-template-columns: 1fr 64px;
+}
+
+#app.hide-thumbs .guess-thumb { display: none; }
+
 /* ── Banner (win / lose) ───────────────────────────────────────────────────── */
 
 .banner {
