@@ -114,7 +114,7 @@ function getPixels(img) {
 /* ── Daily target ──────────────────────────────────────────────────────────── */
 
 function pickTarget() {
-  const seed = hashStr("flagle-shuffle-seed-42");
+  const seed = hashStr("flagle-shuffle-seed-v2");
   const shuffled = seededShuffle(countries.map(c => c.code), seed);
   const idx = dayIndex() % shuffled.length;
   return shuffled[idx];
